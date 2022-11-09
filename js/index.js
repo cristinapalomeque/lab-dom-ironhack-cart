@@ -19,6 +19,7 @@ function calculateAll() {
   [...products].forEach((product) => {
     total += updateSubtotal(product);
   });
+  document.querySelector('#total-value span').innerHTML = total;
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at later point, it can be removed.
   // const singleProduct = document.querySelector('.product');
@@ -37,6 +38,7 @@ function removeProduct(event) {
   console.log('The target in remove is:', target);
   const tr = target.parentNode.parentNode;
   tr.parentNode.removeChild(tr);
+  calculateAll();
   //... your code goes here
 }
 
